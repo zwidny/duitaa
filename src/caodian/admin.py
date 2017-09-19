@@ -2,5 +2,9 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
+from .models import CaoDian
 
-# Register your models here.
+
+@admin.register(CaoDian)
+class CaoDianAdmin(admin.ModelAdmin):
+    pass
