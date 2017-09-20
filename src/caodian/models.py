@@ -6,11 +6,13 @@ from django.conf import settings
 
 
 class CaoDian(models.Model):
-    """槽点-为吐槽尔生
+    """槽点-为吐槽er生
 
     """
     content = models.TextField()
     user = models.ManyToManyField(to=settings.AUTH_USER_MODEL, related_name='caodian')
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
 
     @property
     def truncate(self):
