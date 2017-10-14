@@ -11,8 +11,8 @@ class CaoDian(models.Model):
     """
     content = models.TextField()
     user = models.ManyToManyField(to=settings.AUTH_USER_MODEL, related_name='caodian')
-    created = models.DateTimeField(auto_now_add=True)
-    modified = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    modified = models.DateTimeField(auto_now=True, blank=True, null=True)
 
     @property
     def truncate(self):
